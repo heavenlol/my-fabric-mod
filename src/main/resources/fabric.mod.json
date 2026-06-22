@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "myimguimod",
+  "version": "${version}",
+  "name": "My ImGui Mod",
+  "description": "An ImGui mod built entirely via Termux and GitHub Actions!",
+  "authors": [ "YourName" ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/myimguimod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.mod.ExampleMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~26.2",
+    "java": ">=21"
+  }
+}
