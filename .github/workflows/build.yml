@@ -9,7 +9,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 25
+      - name: Set up JDK 21 (For Gradle to Run)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Set up JDK 25 (For Minecraft Toolchain)
         uses: actions/setup-java@v4
         with:
           java-version: '25'
@@ -22,9 +28,3 @@ jobs:
 
       - name: Build Mod with Gradle
         run: gradle build --no-daemon
-
-      - name: Upload Mod Jar Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: Fabric-Mod-Jar
-          path: build/libs/*.jar
